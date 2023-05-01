@@ -116,7 +116,7 @@ cd 解压的mysql目录
 -DWITH_INNOBASE_STORAGE_ENGINE=1  默认的存储引擎，支持外键
 ```
 
-![image-20230430020941797](Mysql.assets/image-20230430020941797.png)
+![image-20230430020941797](assets/Mysql/image-20230430020941797.png)
 
 ```shell
 [root@mysql-server mysql-5.7.27]# make && make install
@@ -124,11 +124,11 @@ cd 解压的mysql目录
     不用重新解压，只需要删除安装目录中的缓存文件CMakeCache.txt
 ```
 
-![image-20230430021000652](Mysql.assets/image-20230430021000652.png)
+![image-20230430021000652](assets/Mysql/image-20230430021000652.png)
 
 **需要很长时间！**大约半小时
 
-![image-20230430021008669](Mysql.assets/image-20230430021008669.png)
+![image-20230430021008669](assets/Mysql/image-20230430021008669.png)
 
 8、初始化
 
@@ -138,7 +138,7 @@ cd 解压的mysql目录
 [root@mysql-server mysql]# ./bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data     ---初始化完成之后，一定要记住提示最后的密码用于登陆或者修改密码
 ```
 
-![image-20230430021024523](Mysql.assets/image-20230430021024523.png)
+![image-20230430021024523](assets/Mysql/image-20230430021024523.png)
 
 ```
 初始化,只需要初始化一次
@@ -184,7 +184,7 @@ socket = /tmp/mysql.sock
 character_set_server = utf8
 ```
 
-![image-20230430021130928](Mysql.assets/image-20230430021130928.png)
+![image-20230430021130928](assets/Mysql/image-20230430021130928.png)
 
 9、启动mysql
 
@@ -193,7 +193,7 @@ character_set_server = utf8
 [root@mysql-server mysql]# ./bin/mysqld_safe --user=mysql &
 ```
 
-![image-20230430021139423](Mysql.assets/image-20230430021139423.png)
+![image-20230430021139423](assets/Mysql/image-20230430021139423.png)
 
 10、登录mysql
 
@@ -300,19 +300,19 @@ tcp6       0      0 :::3306                 :::*                    LISTEN      
 mysql的官方网站：www.mysql.com
 ```
 
-![image-20230430021254128](Mysql.assets/image-20230430021254128.png)
+![image-20230430021254128](assets/Mysql/image-20230430021254128.png)
 
 拉到底
 
-![image-20230430021302566](Mysql.assets/image-20230430021302566.png)
+![image-20230430021302566](assets/Mysql/image-20230430021302566.png)
 
-![image-20230430021311388](Mysql.assets/image-20230430021311388.png)
+![image-20230430021311388](assets/Mysql/image-20230430021311388.png)
 
-![image-20230430021321899](Mysql.assets/image-20230430021321899.png)
+![image-20230430021321899](assets/Mysql/image-20230430021321899.png)
 
-![image-20230430021328792](Mysql.assets/image-20230430021328792.png)
+![image-20230430021328792](assets/Mysql/image-20230430021328792.png)
 
-![image-20230430021335862](Mysql.assets/image-20230430021335862.png)
+![image-20230430021335862](assets/Mysql/image-20230430021335862.png)
 
 1、下载rpm包
 
@@ -334,7 +334,7 @@ mysql的官方网站：www.mysql.com
 [root@mysql-server ~]# vim /etc/yum.repos.d/mysql-community.repo   #修改如下
 ```
 
-![image-20230430021357238](Mysql.assets/image-20230430021357238.png)
+![image-20230430021357238](assets/Mysql/image-20230430021357238.png)
 
 ```shell
 1表示开启，0表示关闭
@@ -444,7 +444,7 @@ Bye
 mysql> show engines;
 ```
 
-![image-20230430021707734](Mysql.assets/image-20230430021707734.png)
+![image-20230430021707734](assets/Mysql/image-20230430021707734.png)
 
 修改搜索引擎
 
@@ -738,7 +738,7 @@ mysql> alter table t7 add primary key (hostname);
 mysql> create table t9(hostname char(20),ip char(150),primary key(hostname));
 ```
 
-![image-20230430022544024](Mysql.assets/image-20230430022544024.png)
+![image-20230430022544024](assets/Mysql/image-20230430022544024.png)
 
 ```shell
 mysql> insert into t9(hostname,ip) values('github.com', '10.10.10.11');
@@ -788,7 +788,7 @@ mysql> CREATE TABLE department3 (
     );
 ```
 
-![image-20230430022602435](Mysql.assets/image-20230430022602435.png)
+![image-20230430022602435](assets/Mysql/image-20230430022602435.png)
 
 ```shell
 mysql> select * from department3;
@@ -837,9 +837,9 @@ mysql> CREATE TABLE department2 (
      );
 ```
 
-![image-20230430022615239](Mysql.assets/image-20230430022615239.png)
+![image-20230430022615239](assets/Mysql/image-20230430022615239.png)
 
-![image-20230430022622530](Mysql.assets/image-20230430022622530.png)
+![image-20230430022622530](assets/Mysql/image-20230430022622530.png)
 
 插入数据的时候id和comment字段相同可以插入数据，如果有相同的名字不唯一。所以插入数据失败。
 
@@ -1367,7 +1367,7 @@ mysql> select emp_id,emp_name,dept_name from  employee6 right join department6 o
 
 先将这个修改成简单密码注释掉
 
-![image-20230430023402808](Mysql.assets/image-20230430023402808.png)
+![image-20230430023402808](assets/Mysql/image-20230430023402808.png)
 
 ```shell
 root账户没了或者root密码丢失：
@@ -1786,7 +1786,7 @@ mysql> flush privileges; #刷新授权
 
 # 日志管理
 
-![image-20230430024129265](Mysql.assets/image-20230430024129265.png)
+![image-20230430024129265](assets/Mysql/image-20230430024129265.png)
 
 ```shell
 Error Log
@@ -1859,7 +1859,7 @@ socket=/var/lib/mysql/mysql.sock
 
 ​    Xtrabackup是开源免费的支持MySQL 数据库热备份的软件，在 Xtrabackup 包中主要有 Xtrabackup 和 innobackupex 两个工具。其中 Xtrabackup 只能备份 InnoDB 和 XtraDB 两种引擎; innobackupex则是封装了Xtrabackup，同时增加了备份MyISAM引擎的功能。它不暂停服务创建Innodb**热备份**；
 
-![image-20230430024455871](Mysql.assets/image-20230430024455871.png)
+![image-20230430024455871](assets/Mysql/image-20230430024455871.png)
 
 ### 1、安装xtrabackup
 
@@ -1880,7 +1880,7 @@ socket=/var/lib/mysql/mysql.sock
 
 修改如下内容：将原来的1改为0
 
-![image-20230430024513557](Mysql.assets/image-20230430024513557.png)
+![image-20230430024513557](assets/Mysql/image-20230430024513557.png)
 
 ```shell
 [root@mysql-server yum.repos.d]# yum -y install percona-xtrabackup-24.x86_64
@@ -1952,7 +1952,7 @@ wke4ZgCePe3sPPF49lBal7QaYPdjqapa1SQ=
 [root@mysql-server yum.repos.d]# yum -y install percona-xtrabackup
 ```
 
-![image-20230430024603780](Mysql.assets/image-20230430024603780.png)
+![image-20230430024603780](assets/Mysql/image-20230430024603780.png)
 
 ```shell
 [root@mysql-server yum.repos.d]# innobackupex --version
@@ -1967,9 +1967,9 @@ innobackupex version 2.3.10 Linux (x86_64) (revision id: bd0d4403f36)
 https://zhuanlan.zhihu.com/p/140414143
 ```
 
-![image-20230430024626917](Mysql.assets/image-20230430024626917.png)
+![image-20230430024626917](assets/Mysql/image-20230430024626917.png)
 
-![image-20230430024632770](Mysql.assets/image-20230430024632770.png)
+![image-20230430024632770](assets/Mysql/image-20230430024632770.png)
 
 下载完成，把包上传至服务器
 
@@ -2006,7 +2006,7 @@ mysql> create table t1(id int);
 [root@mysql-server ~]# innobackupex --user=root --password='123' /xtrabackup/full
 ```
 
-![image-20230430024657605](Mysql.assets/image-20230430024657605.png)
+![image-20230430024657605](assets/Mysql/image-20230430024657605.png)
 
 ```shell
 可以查看一下:
@@ -2029,7 +2029,7 @@ mysql> create table t1(id int);
 [root@mysql-server ~]# innobackupex --apply-log /xtrabackup/full/2019-08-20_11-47-49
 ```
 
-![image-20230430024708412](Mysql.assets/image-20230430024708412.png)
+![image-20230430024708412](assets/Mysql/image-20230430024708412.png)
 
 ```shell
 3.确认数据库目录：
@@ -2041,7 +2041,7 @@ datadir=/var/lib/mysql
 [root@mysql-server ~]# innobackupex --copy-back /xtrabackup/full/2019-08-20_11-47-49
 ```
 
-![image-20230430024715041](Mysql.assets/image-20230430024715041.png)
+![image-20230430024715041](assets/Mysql/image-20230430024715041.png)
 
 ```shell
 5.修改权限：
@@ -2082,7 +2082,7 @@ mysql> show tables;
 在数据库上面创建一个测试的库
 ```
 
-![image-20230430024735649](Mysql.assets/image-20230430024735649.png)
+![image-20230430024735649](assets/Mysql/image-20230430024735649.png)
 
 1.完整备份:周一
 
@@ -2152,7 +2152,7 @@ mysql> insert into testdb.t1 values(3);   #模拟周三
 登陆上去看一下:
 ```
 
-![image-20230430024808145](Mysql.assets/image-20230430024808145.png)
+![image-20230430024808145](assets/Mysql/image-20230430024808145.png)
 
 ### 4、差异备份流程
 
@@ -2231,7 +2231,7 @@ Fri Aug 23 15:53:00 CST 2019
 
 登陆mysql查看一下:
 
-![image-20230430025022842](Mysql.assets/image-20230430025022842.png)
+![image-20230430025022842](assets/Mysql/image-20230430025022842.png)
 
 只有123.因为我们恢复的是周三的差异备份。
 
@@ -2303,7 +2303,7 @@ mysqldump 是 MySQL 自带的逻辑备份工具。可以保证数据的一致性
 
 到目录下面查看一下：
 
-![image-20230430025042344](Mysql.assets/image-20230430025042344.png)
+![image-20230430025042344](assets/Mysql/image-20230430025042344.png)
 
 ##### 4、恢复数据库和表
 
@@ -2318,7 +2318,7 @@ mysqldump 是 MySQL 自带的逻辑备份工具。可以保证数据的一致性
 mysql> show databases;
 ```
 
-![image-20230430025048926](Mysql.assets/image-20230430025048926.png)
+![image-20230430025048926](assets/Mysql/image-20230430025048926.png)
 
 ```shell
 mysql> drop database company;
@@ -2374,7 +2374,7 @@ mysql> create database t1;
 
 登陆数据查看：
 
-![image-20230430025103270](Mysql.assets/image-20230430025103270.png)
+![image-20230430025103270](assets/Mysql/image-20230430025103270.png)
 
 ##### 8、数据的导入导出,没有表结构。
 
@@ -2386,7 +2386,7 @@ mysql> create database t1;
 mysql> show variables like "secure_file_priv";  ----查询导入导出的目录。 
 ```
 
-![image-20230430025111854](Mysql.assets/image-20230430025111854.png)
+![image-20230430025111854](assets/Mysql/image-20230430025111854.png)
 
 ```shell
 修改安全文件目录：
@@ -2436,7 +2436,7 @@ log-bin=/var/log/sql-bin/mylog
 server-id=1
 ```
 
-![image-20230430025201547](Mysql.assets/image-20230430025201547.png)
+![image-20230430025201547](assets/Mysql/image-20230430025201547.png)
 
 创建目录并修改权限
 
@@ -2446,7 +2446,7 @@ server-id=1
 [root@mysql-server ~]# systemctl restart mysqld
 ```
 
-![image-20230430025247274](Mysql.assets/image-20230430025247274.png)
+![image-20230430025247274](assets/Mysql/image-20230430025247274.png)
 
 ```shell
 mysql> flush logs; #刷新binlog日志会截断产生新的日志文件
@@ -2454,7 +2454,7 @@ mysql> flush logs; #刷新binlog日志会截断产生新的日志文件
 mysql> create table testdb.t3(id int);   #创建一个表
 ```
 
-![image-20230430025310220](Mysql.assets/image-20230430025310220.png)
+![image-20230430025310220](assets/Mysql/image-20230430025310220.png)
 
 根据位置恢复
 
@@ -2464,7 +2464,7 @@ mysql> create table testdb.t3(id int);   #创建一个表
 [root@mysql-server sql-bin]# mysqlbinlog mylog.000002 
 ```
 
-![image-20230430025404427](Mysql.assets/image-20230430025404427.png)
+![image-20230430025404427](assets/Mysql/image-20230430025404427.png)
 
 测试
 
@@ -2480,7 +2480,7 @@ mysql: [Warning] Using a password on the command line interface can be insecure.
 
 查看：
 
-![image-20230430025413758](Mysql.assets/image-20230430025413758.png)
+![image-20230430025413758](assets/Mysql/image-20230430025413758.png)
 
 # mysql优化
 
@@ -2560,11 +2560,11 @@ C：slave：
 3、查看sql和IO是不是yes
 ```
 
-![image-20230430025657574](Mysql.assets/image-20230430025657574.png)
+![image-20230430025657574](assets/Mysql/image-20230430025657574.png)
 
 
 
-![image-20230430025752941](Mysql.assets/image-20230430025752941.png)
+![image-20230430025752941](assets/Mysql/image-20230430025752941.png)
 
 ```shell
 准备环境两台机器，关闭防火墙和selinux。---两台机器环境必须一致。时间也得一致
@@ -2629,7 +2629,7 @@ master_auto_position=1;
 Query OK, 0 rows affected, 2 warnings (0.02 sec)
 ```
 
-![image-20230430025828057](Mysql.assets/image-20230430025828057.png)
+![image-20230430025828057](assets/Mysql/image-20230430025828057.png)
 
 ```shell
 mysql> start slave;   #启动slave角色
@@ -2638,11 +2638,11 @@ Query OK, 0 rows affected (0.00 sec)
 mysql> show slave status\G  #查看状态，验证sql和IO是不是yes。
 ```
 
-![image-20230430025836584](Mysql.assets/image-20230430025836584.png)
+![image-20230430025836584](assets/Mysql/image-20230430025836584.png)
 
 测试
 
-![image-20230430025845348](Mysql.assets/image-20230430025845348.png)
+![image-20230430025845348](assets/Mysql/image-20230430025845348.png)
 
 在slave上面查看一下有没有同步过去：
 
@@ -2749,7 +2749,7 @@ server-id=1
 [root@mysql-master ~]# grep pass /var/log/mysqld.log
 ```
 
-![image-20230430030015493](Mysql.assets/image-20230430030015493.png)
+![image-20230430030015493](assets/Mysql/image-20230430030015493.png)
 
 修改密码
 
@@ -2766,7 +2766,7 @@ mysql> flush privileges;
 mysql> show master status\G
 ```
 
-![image-20230430030027256](Mysql.assets/image-20230430030027256.png)
+![image-20230430030027256](assets/Mysql/image-20230430030027256.png)
 
 在从服务上面操作：
 
@@ -2794,7 +2794,7 @@ mysql> start slave;
 mysql> show slave status\G
 ```
 
-![image-20230430030036362](Mysql.assets/image-20230430030036362.png)
+![image-20230430030036362](assets/Mysql/image-20230430030036362.png)
 
 ```shell
 参数解释：
@@ -2927,7 +2927,7 @@ mysql> create database test;
 [root@mysql-slave2 ~]# mysql -uroot -p'server@12345!'  test < test.sql #将数据导入。
 ```
 
-![image-20230430030121419](Mysql.assets/image-20230430030121419.png)
+![image-20230430030121419](assets/Mysql/image-20230430030121419.png)
 
 ```shell
 开始配置slave2
@@ -2950,7 +2950,7 @@ mysql> start slave;  #将slave启动起来
 mysql> show slave status\G  #查看一下状态
 ```
 
-![image-20230430030132145](Mysql.assets/image-20230430030132145.png)
+![image-20230430030132145](assets/Mysql/image-20230430030132145.png)
 
 测试：
 
@@ -2966,9 +2966,9 @@ mysql>
 
 两台slave
 
-![image-20230430030140349](Mysql.assets/image-20230430030140349.png)
+![image-20230430030140349](assets/Mysql/image-20230430030140349.png)
 
-![image-20230430030148226](Mysql.assets/image-20230430030148226.png)
+![image-20230430030148226](assets/Mysql/image-20230430030148226.png)
 
 主从同步完成！
 
@@ -2992,7 +2992,7 @@ mysql>
 
 这里是在mysql主从复制实现的基础上，利用mycat做读写分离，架构图如下
 
-![image-20230430030227098](Mysql.assets/image-20230430030227098.png)
+![image-20230430030227098](assets/Mysql/image-20230430030227098.png)
 
 部署环境：
 
@@ -3019,7 +3019,7 @@ java -version
 
 ## 部署mycat
 
-![image-20230430030247810](Mysql.assets/image-20230430030247810.png)
+![image-20230430030247810](assets/Mysql/image-20230430030247810.png)
 
 ```shell
 下载
@@ -3082,7 +3082,7 @@ MyCAT 目前主要通过配置文件的方式来定义逻辑库和相关配置:
 
 明日香特意更换的配置：
 
-![image-20230430030305657](Mysql.assets/image-20230430030305657.png)
+![image-20230430030305657](assets/Mysql/image-20230430030305657.png)
 
 ## 配置schema.xml
 
@@ -3178,11 +3178,11 @@ writeType 属性
 
 明日香特意更换的配置，因为我这边是两从节点，所以配置了两个读节点：
 
-![image-20230430030322018](Mysql.assets/image-20230430030322018.png)
+![image-20230430030322018](assets/Mysql/image-20230430030322018.png)
 
-![image-20230430030329885](Mysql.assets/image-20230430030329885.png)
+![image-20230430030329885](assets/Mysql/image-20230430030329885.png)
 
-![image-20230430030337304](Mysql.assets/image-20230430030337304.png)
+![image-20230430030337304](assets/Mysql/image-20230430030337304.png)
 
 在真实的 master 数据库上给用户授权
 
@@ -3219,7 +3219,7 @@ Starting Mycat-server...
 [root@mycat ~]# netstat -lntp | grep java
 ```
 
-![image-20230430030349507](Mysql.assets/image-20230430030349507.png)
+![image-20230430030349507](assets/Mysql/image-20230430030349507.png)
 
 测试mycat
 
@@ -3228,11 +3228,11 @@ Starting Mycat-server...
 [root@mysql-master ~]# mysql -uroot -h mysql-mycat -p'server@456789' -P 8066
 ```
 
-![image-20230430030357618](Mysql.assets/image-20230430030357618.png)
+![image-20230430030357618](assets/Mysql/image-20230430030357618.png)
 
-![image-20230430030405715](Mysql.assets/image-20230430030405715.png)
+![image-20230430030405715](assets/Mysql/image-20230430030405715.png)
 
-![image-20230430030412523](Mysql.assets/image-20230430030412523.png)
+![image-20230430030412523](assets/Mysql/image-20230430030412523.png)
 
 ```shell
 如果在show table报错：
