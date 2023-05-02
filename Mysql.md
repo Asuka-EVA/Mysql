@@ -2782,6 +2782,7 @@ server-id=2
 [root@mysql-slave ~]# mysqladmin -uroot -p'ofeUcgA)4/Yg' password 'server@12345!'
 登录mysql
 [root@mysql-slave ~]# mysql -uroot -p'server@12345!'
+stop slave;
 mysql> \e
 CHANGE MASTER TO
 MASTER_HOST='mysql-master',
