@@ -1,4 +1,4 @@
-## 一、环境准备
+# 一、环境准备
 
 | IP             | 主机名       | 角色                                | OS      |
 | -------------- | ------------ | ----------------------------------- | ------- |
@@ -68,7 +68,7 @@ ssh-copy-id mysql-slave2
 
 
 
-## 二、mysql主从部署
+# 二、mysql主从部署
 
 
 
@@ -139,7 +139,7 @@ relay-log-index=slave-relay-bin.index
 
 
 
-#### 3、启动服务
+#### 2、启动服务
 
 
 
@@ -149,7 +149,7 @@ systemctl start mysqld
 
 
 
-#### 5、设置root密码
+#### 3、设置root密码
 
 
 
@@ -252,7 +252,7 @@ show  global variables like 'read_only';
 
 
 
-## 三、MHA概述
+# 三、MHA概述
 
 
 
@@ -266,7 +266,7 @@ GitHub地址：https://github.com/yoshinorim/mha4mysql-manager
 
 
 
-## 四、MHA架构
+# 四、MHA架构
 
 
 
@@ -278,7 +278,7 @@ GitHub地址：https://github.com/yoshinorim/mha4mysql-manager
 
 
 
-## 五、MHA 组件
+# 五、MHA 组件
 
 
 
@@ -298,7 +298,7 @@ MHA 由 MHA Manager 和 MHA Node 组成，如下所示：
 
 
 
-## 六、安装MHA软件
+# 六、安装MHA软件
 
 
 
@@ -546,7 +546,7 @@ check_repl_delay=0
 
 
 
-### 5）在master上手动启动虚拟iP
+### 3）在master上手动启动虚拟iP
 
 
 
@@ -560,7 +560,7 @@ check_repl_delay=0
 
 
 
-### 6）在manager 节点测试ssh 无密认证
+### 4）在manager 节点测试ssh 无密认证
 
 
 
@@ -574,7 +574,7 @@ masterha_check_ssh   -conf=/opt/mysql-mha/mysql_mha.cnf
 
 
 
-### 7）在manager 节点上测试mysql主从情况
+### 5）在manager 节点上测试mysql主从情况
 
 
 
@@ -588,7 +588,7 @@ masterha_check_repl -conf=/opt/mysql-mha/mysql_mha.cnf
 
 
 
-### 8）在manage上启动mha
+### 6）在manage上启动mha
 
 
 
@@ -609,7 +609,7 @@ nohup masterha_manager  \
 
 
 
-### 9）查看MHA状态
+### 7）查看MHA状态
 
 
 
@@ -623,7 +623,7 @@ masterha_check_status --conf=/opt/mysql-mha/mysql_mha.cnf
 
 
 
-### 10）查看MHA日志文件
+### 8）查看MHA日志文件
 
 
 
@@ -637,7 +637,7 @@ masterha_check_status --conf=/opt/mysql-mha/mysql_mha.cnf
 
 
 
-### 11）manager节点关闭manager服务
+### 9）manager节点关闭manager服务
 
 
 
@@ -651,7 +651,7 @@ masterha_stop --conf=/opt/mysql-mha/mysql_mha.cnf
 
 
 
-## 七、故障模拟与恢复
+# 七、故障模拟与恢复
 
 
 
