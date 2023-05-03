@@ -144,7 +144,7 @@ relay-log-index=slave-relay-bin.index
 
 
 ```bash
-systemctl start mysqld
+systemctl restart mysqld
 ```
 
 
@@ -184,10 +184,11 @@ set global validate_password_length=1;
 
 # 从库进行同步使用的用户
 grant replication slave on *.* to 'slave'@'192.168.96.%' identified by '123456';
+grant replication slave on *.* to 'slave'@'%' identified by '123456';
 
 # MHA-manager使用
 grant all  on *.* to 'mha'@'192.168.96.%' identified by '123456';
-
+grant all  on *.* to 'mha'@'%' identified by '123456';
 #防止从库通过主机名连接不上主库
 grant all on *.* to 'mha'@'%' identified by '123456';
 
@@ -597,6 +598,7 @@ nohup masterha_manager  \
 --conf=/opt/mysql-mha/mysql_mha.cnf \
 --remove_dead_master_conf \
 --ignore_last_failover < /dev/null > /var/log/mha_manager.log 2>&1 &
+[1] 1880  ##调入后台的代号
 ```
 
 
